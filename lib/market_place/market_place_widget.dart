@@ -32,8 +32,8 @@ class _MarketPlaceWidgetState extends State<MarketPlaceWidget> {
             color: Colors.white,
             size: 30,
           ),
-          onPressed: () {
-            print('IconButton pressed ...');
+          onPressed: () async {
+            context.pop();
           },
         ),
         title: Text(

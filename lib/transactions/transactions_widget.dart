@@ -34,8 +34,8 @@ class _TransactionsWidgetState extends State<TransactionsWidget> {
             color: Colors.white,
             size: 30,
           ),
-          onPressed: () {
-            print('IconButton pressed ...');
+          onPressed: () async {
+            context.pop();
           },
         ),
         title: Text(
@@ -267,6 +267,7 @@ class _TransactionsWidgetState extends State<TransactionsWidget> {
                   );
                 },
               ),
+              Divider(),
               if (valueOrDefault<bool>(
                       currentUserDocument?.flagOpenfinance, false)
                   ? !valueOrDefault<bool>(currentUserDocument?.flagDebt, false)

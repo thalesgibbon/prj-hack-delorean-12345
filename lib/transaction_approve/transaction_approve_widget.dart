@@ -61,8 +61,8 @@ class _TransactionApproveWidgetState extends State<TransactionApproveWidget> {
             color: Colors.white,
             size: 30,
           ),
-          onPressed: () {
-            print('IconButton pressed ...');
+          onPressed: () async {
+            context.pop();
           },
         ),
         title: Text(
@@ -95,6 +95,25 @@ class _TransactionApproveWidgetState extends State<TransactionApproveWidget> {
                       mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              widget.cotaname!,
+                              textAlign: TextAlign.center,
+                              style:
+                                  FlutterFlowTheme.of(context).title2.override(
+                                        fontFamily: 'Poppins',
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryColor,
+                                      ),
+                            ),
+                          ],
+                        ),
+                        Divider(
+                          color: Colors.transparent,
+                        ),
                         Text(
                           'Escolha o parceiro de compra do crédito de carbono:',
                           textAlign: TextAlign.justify,
@@ -131,12 +150,7 @@ class _TransactionApproveWidgetState extends State<TransactionApproveWidget> {
                                 setState(() => radioButtonValue = value);
                               },
                               optionHeight: 25,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .bodyText1
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: Colors.black,
-                                  ),
+                              textStyle: FlutterFlowTheme.of(context).bodyText2,
                               selectedTextStyle: FlutterFlowTheme.of(context)
                                   .bodyText2
                                   .override(
@@ -244,25 +258,6 @@ class _TransactionApproveWidgetState extends State<TransactionApproveWidget> {
                           'Você confirma a compra desta cota de crédito de carbono?',
                           textAlign: TextAlign.justify,
                           style: FlutterFlowTheme.of(context).subtitle2,
-                        ),
-                        Divider(
-                          color: Colors.transparent,
-                        ),
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              widget.cotaname!,
-                              textAlign: TextAlign.center,
-                              style:
-                                  FlutterFlowTheme.of(context).title2.override(
-                                        fontFamily: 'Poppins',
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryColor,
-                                      ),
-                            ),
-                          ],
                         ),
                         Divider(
                           color: Colors.transparent,
