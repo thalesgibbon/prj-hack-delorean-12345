@@ -1,9 +1,9 @@
 import '../auth/auth_util.dart';
+import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomeWidget extends StatefulWidget {
@@ -17,22 +17,38 @@ class _HomeWidgetState extends State<HomeWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
-  void initState() {
-    super.initState();
-    // On page load action.
-    SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (valueOrDefault<bool>(currentUserDocument?.flagAgree, false)) {
-        return;
-      }
-
-      context.pushNamed('Acordo');
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
+      appBar: AppBar(
+        backgroundColor: FlutterFlowTheme.of(context).primaryColor,
+        automaticallyImplyLeading: false,
+        leading: FlutterFlowIconButton(
+          borderColor: Colors.transparent,
+          borderRadius: 30,
+          borderWidth: 1,
+          buttonSize: 60,
+          icon: Icon(
+            Icons.arrow_back_rounded,
+            color: Colors.white,
+            size: 30,
+          ),
+          onPressed: () async {
+            context.pop();
+          },
+        ),
+        title: Text(
+          'Início',
+          style: FlutterFlowTheme.of(context).title2.override(
+                fontFamily: 'Poppins',
+                color: Colors.white,
+                fontSize: 22,
+              ),
+        ),
+        actions: [],
+        centerTitle: true,
+        elevation: 2,
+      ),
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       body: GestureDetector(
         onTap: () => FocusScope.of(context).unfocus(),
@@ -43,6 +59,18 @@ class _HomeWidgetState extends State<HomeWidget> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'assets/images/CAPA_APP.png',
+                    width: 200,
+                    height: 200,
+                    fit: BoxFit.contain,
+                  ),
+                ],
+              ),
               if (!valueOrDefault<bool>(
                   currentUserDocument?.flagOpenfinance, false))
                 AuthUserStreamWidget(
@@ -431,6 +459,36 @@ class _HomeWidgetState extends State<HomeWidget> {
               ),
               Divider(
                 color: Colors.transparent,
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  FFButtonWidget(
+                    onPressed: () async {
+                      GoRouter.of(context).prepareAuthEvent();
+                      await signOut();
+
+                      context.goNamedAuth('Login', mounted);
+                    },
+                    text: 'SAIR',
+                    options: FFButtonOptions(
+                      width: 100,
+                      height: 40,
+                      color: Color(0x005177A6),
+                      textStyle:
+                          FlutterFlowTheme.of(context).subtitle2.override(
+                                fontFamily: 'Poppins',
+                                color: Colors.white,
+                              ),
+                      borderSide: BorderSide(
+                        color: FlutterFlowTheme.of(context).secondaryText,
+                        width: 1,
+                      ),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

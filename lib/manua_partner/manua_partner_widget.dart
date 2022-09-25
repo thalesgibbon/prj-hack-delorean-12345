@@ -1,3 +1,4 @@
+import '../auth/auth_util.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
@@ -57,7 +58,16 @@ class _ManuaPartnerWidgetState extends State<ManuaPartnerWidget> {
                           ),
                           FFButtonWidget(
                             onPressed: () async {
-                              context.pushNamed('Home');
+                              if (valueOrDefault<bool>(
+                                  currentUserDocument?.flagAgree, false)) {
+                                context.pushNamed('Home');
+
+                                return;
+                              } else {
+                                context.pushNamed('Acordo');
+
+                                return;
+                              }
                             },
                             text: 'Próximo',
                             options: FFButtonOptions(

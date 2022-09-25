@@ -115,18 +115,26 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => AcordoWidget(),
             ),
             FFRoute(
+              name: 'TransactionApprove',
+              path: 'transactionApprove',
+              builder: (context, params) => TransactionApproveWidget(
+                cotaname: params.getParam('cotaname', ParamType.String),
+                cotaid: params.getParam(
+                    'cotaid', ParamType.DocumentReference, 'transactions'),
+                catavalue: params.getParam('catavalue', ParamType.double),
+              ),
+            ),
+            FFRoute(
+              name: 'TransactionConfirm',
+              path: 'transactionConfirm',
+              builder: (context, params) => TransactionConfirmWidget(),
+            ),
+            FFRoute(
               name: 'Transactions',
               path: 'transactions',
               builder: (context, params) => params.isEmpty
                   ? NavBarPage(initialPage: 'Transactions')
                   : TransactionsWidget(),
-            ),
-            FFRoute(
-              name: 'TransactionApprove',
-              path: 'transactionApprove',
-              builder: (context, params) => TransactionApproveWidget(
-                cota: params.getParam('cota', ParamType.String),
-              ),
             ),
             FFRoute(
               name: 'Home',
