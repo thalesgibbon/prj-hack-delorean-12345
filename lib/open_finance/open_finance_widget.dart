@@ -119,6 +119,17 @@ class _OpenFinanceWidgetState extends State<OpenFinanceWidget> {
                             );
                             await currentUserReference!.update(usersUpdateData);
 
+                            final transactionsCreateData =
+                                createTransactionsRecordData(
+                              user: currentUserReference,
+                              name: '2022-01 COTA INICIAL',
+                              value: 0.99,
+                              flagPgto: false,
+                            );
+                            await TransactionsRecord.collection
+                                .doc()
+                                .set(transactionsCreateData);
+
                             context.pushNamed('Home');
                           },
                           text: 'Concluir',

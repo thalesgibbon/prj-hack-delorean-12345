@@ -285,9 +285,9 @@ class _CadastroWidgetState extends State<CadastroWidget> {
 
                     context.pushNamedAuth('Login', mounted);
                   },
-                  text: 'Acessar',
+                  text: 'Cadastrar',
                   options: FFButtonOptions(
-                    width: 100,
+                    width: 130,
                     height: 40,
                     color: FlutterFlowTheme.of(context).primaryColor,
                     textStyle: FlutterFlowTheme.of(context).subtitle2.override(
