@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "696459459568",
+    "project_id": "prj-hack-delorean-12345",
+    "storage_bucket": "prj-hack-delorean-12345.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:696459459568:android:63783af3e74f2a91247b35",
+        "android_client_info": {
+          "package_name": "com.mycompany.delorean"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "696459459568-a5e0q8dpmej4c6hjlu76d1a3tpmdm58k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.delorean",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "696459459568-dpqfp8te9lgotbea8bc9pdpf2h0bjmor.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVFJfeP-8kyCXYWSSKe53gMsLRt1O3cTA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "696459459568-dpqfp8te9lgotbea8bc9pdpf2h0bjmor.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "696459459568-srht2mosvl9j0jeem0o02pd390dv4qv3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.delorean"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
