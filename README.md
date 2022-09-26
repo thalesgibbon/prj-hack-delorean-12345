@@ -1,31 +1,23 @@
 # delorean
 
-A new Flutter project.
+Este eh o repositorio do APLICATIVO do delorean para o hackathon btg.
+
+A infraestrutura de processamento dos dados na AWS esta neste repo: https://github.com/lukecampos/prj-hack-delorean-12345
 
 ## Getting Started
 
-FlutterFlow projects are built to run on the Flutter _stable_ release.
+Aqui contem todos os arquivos utilizados para criacao do app que se integra com nossa inteligencia que esta na AWS. Para isso desenvolvemos um app usando o firebase como backend as a service e utilizamos o flutter como linguagem para construcao do app. Escolhemos o FIrebase pois contem diversas funcionalidades nativas que agilizam o processo do app, por exemplo controle de acesso, criacao de usuario e recuperacao de senha. Podendo assim estar mais focado na ideia e na jornada do nosso usuario.
+
+Criamos uma manual no primeiro acesso do app que apresenta ao usuario nosso proposito. Como tambem, pensamos e deixar o mais clean possivel para que nosso usuario chegue direto aonde deseja.
+
+O aplicativo ja esta funcional, porem mockamos os dados do open finance pois eh base de desenvolvimento, entao a interacao com usuario poderia nao trazer dados com o cpf real. Porem todo o processo esta validado e integrado entre si.
+
+Ponto de melhoria para o processo, pensar na arquitetura de atualizacao dos dados para nao ter que reprocessar tudo igual estamos fazendo. Talvez algo via streaming ou fazendo checkpoints de leitura na base do openfinance.
 
 ### IMPORTANT:
 
-For projects with Firestore integration, you must first run the following commands to ensure the project compiles:
+para testar o app, apenas baixe o arquivo delorean-release.apk
 
-```
-flutter pub get
-flutter packages pub run build_runner build --delete-conflicting-outputs
-```
+A pasta function-firebase-aws contem um arquivo importante que se comunica com a lambda que criamos na AWS para trazer todo o extrato ESG do cliente. Este servico foi instanciado no Firebase Funcionts.
 
-This command creates the generated files that parse each Record from Firestore into a schema object.
-
-### Getting started continued:
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+qualquer duvida, favor entrar em contato com thales.gibbon@gmail.com
